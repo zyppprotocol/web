@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono, Instrument_Serif, Space_Mono } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans, Geist, Geist_Mono, Instrument_Sans, Instrument_Serif, Sora, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const sans = Bricolage_Grotesque({
+const sans = Instrument_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const serif = Instrument_Serif({
+const serif = Sora({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: "400",
 });
 
-const mono = Space_Mono({
+const mono = Space_Grotesk({
   variable: "--font-mono",  
   subsets: ["latin"],
   weight: "400",
