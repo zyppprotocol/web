@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start md:justify-between mx-auto gap-8 md:gap-0">
         <div className="text-center md:text-left">
           <Link href="https://x.com/use_zypp/status/1959235039503298640" target="_blank">
-            <Badge className='bg-lime-950/20 border hover:bg-lime-950/40 hover:scale-[1.05] transition duration-300 cursor-pointer border-lime-800/20 backdrop-blur-lg text-primary px-4 py-2 text-xs font-semibold mb-4 gap-3 max-w-full overflow-hidden'>
+            <Badge className='bg-green-950/20 border hover:bg-green-950/40 hover:scale-[1.05] transition duration-300 cursor-pointer border-green-800/20 backdrop-blur-lg text-primary px-4 py-2 text-xs font-semibold mb-4 gap-3 max-w-full overflow-hidden'>
               <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
                 <path fill="#fff" d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
               </svg>

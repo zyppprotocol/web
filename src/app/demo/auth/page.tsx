@@ -46,7 +46,7 @@ interface AuthFormProps {
 // --- SUB-COMPONENTS ---
 
 const GlassInputWrapper = ({ children }: { children: React.ReactNode }) => (
-    <div className="rounded-full border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm transition-colors focus-within:border-lime-400/70 focus-within:bg-lime-900/10">
+    <div className="rounded-full border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm transition-colors focus-within:border-green-400/70 focus-within:bg-green-900/10">
         {children}
     </div>
 );

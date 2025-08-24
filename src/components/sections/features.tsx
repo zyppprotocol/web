@@ -39,7 +39,7 @@ export default function Features() {
 
     return (
         <div className="w-full flex flex-col items-center justify-center tracking-wide mb-10 md:my-20 font-sans z-[50000]">
-            <div className="max-w-6xl w-full mx-auto px-4 md:px-6">
+            <div className="max-w-6xl w-full mx-auto px-4 pr-1 md:px-6">
                 <div className="grid grid-cols-1 gap-4 md:gap-6">
                     {features.map((feature, index) => (
                         <div key={index} className={cn(

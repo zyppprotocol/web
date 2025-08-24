@@ -60,7 +60,7 @@ const BackgroundCellCore = () => {
             WebkitMaskRepeat: "no-repeat",
           }}
         >
-          <Pattern cellClassName="border-lime-400 relative z-[100]" />
+          <Pattern cellClassName="border-green-400 relative z-[100]" />
         </div>
         <Pattern className="opacity-[0.5]" cellClassName="border-neutral-700" />
       </div>
@@ -123,7 +123,7 @@ const Pattern = ({ className, cellClassName }: PatternProps) => {
                     ease: "backOut",
                   }}
                   animate={controls}
-                  className="bg-[rgba(183,255,2,0.3)] h-12 w-12" // Changed from blue to lime
+                  className="bg-[rgba(183,255,2,0.3)] h-12 w-12" // Changed from blue to green
                 />
               </div>
             );
