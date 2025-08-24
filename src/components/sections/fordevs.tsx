@@ -36,7 +36,7 @@ const ForDevs = () => {
             src={require("@/assets/code.svg")}
             className='absolute right-0 top-0 pointer-events-none select-none w-1/2 sm:w-2/5 md:w-2/6 opacity-50 sm:opacity-100'
         />
-        <div className='max-w-6xl mx-auto flex flex-col items-start justify-start py-8 sm:py-12 md:py-[5rem] px-9 lg:px-0'>
+        <div className='max-w-6xl mx-auto flex flex-col items-start justify-start pb-8 pt-[3.5rem] sm:py-12 md:py-[5rem] px-9 lg:px-0'>
             <div className='text-left gap-4 sm:gap-7 flex flex-col w-full'>
                 <h1 className='text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left'>
                     <span className='text-primary'>For Developers:</span><br/>
