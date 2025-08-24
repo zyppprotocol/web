@@ -30,7 +30,7 @@ const Navigation = () => {
         <header className="fixed left-0 right-0 z-[5000000] px-2">
             <nav className="flex justify-center w-full max-w-[1920px] mx-auto">
                 <div className={cn(
-                    'w-full max-w-6xl mt-6 py-[0.50px] font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',
+                    'w-full max-w-6xl mt-6 font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',
                     isScrolled 
                         ? 'bg-[#D9FFCF]/8 backdrop-blur-md' 
                         : 'bg-transparent'
@@ -119,15 +119,15 @@ const Navigation = () => {
                                     </ul>
                                 </div>
                                 <div className={cn('flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit', menuState ? 'mt-6' : '')}>
+                                    <Link href="https://x.com/use_zypp/status/1959235039503298640" className='flex gap-2 items-center justify-center' onClick={() => setMenuState(false)}>
                                     <Button
-                                        asChild
+                                        
                                         size="lg"
                                         className="bg-primary hover:bg-primary/90">
-                                        <Link href="https://x.com/use_zypp/status/1959235039503298640" className='flex gap-2 items-center justify-center' onClick={() => setMenuState(false)}>
                                             <span className='font-medium'>Join the waitlist</span>
                                             <ArrowUpRight className='size-5' />     
-                                        </Link>
                                     </Button>
+                                        </Link>
                                 </div>
                             </div>
                         </div>
