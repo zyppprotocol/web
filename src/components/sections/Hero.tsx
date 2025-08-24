@@ -23,7 +23,7 @@ const Hero = () => {
             </Badge>
           </Link>
           <h1 className='font-serif mt-3 text-4xl md:text-4xl font-extrabold'>Payment infrastructure that<br className="hidden md:block" /> moves at <span className='text-primary'>Zypp speed</span></h1>
-          <div className='block md:hidden mt-6 text-sm tracking-wide lg:text:md'>
+          <div className='block md:hidden my-[2rem] text-sm tracking-wide lg:text:md'>
             <p className='text-primary font-sans'>The first DropFi Protocol on Solana.</p>
             <p>Bringing the future of onchain <br className="hidden md:block" />transactions to the offline ecosystem</p>
           </div>
@@ -41,7 +41,7 @@ const Hero = () => {
               asChild
               size="lg"
               className="w-full sm:w-auto bg-transparent hover:bg-neutral-950/60 border border-neutral-800 text-primary hover:text-primary/80 backdrop-blur-lg">
-              <Link href="#waitlist" className='flex gap-2 items-center justify-center'>
+              <Link href="https://x.com/use_zypp/status/1959235039503298640" className='flex gap-2 items-center justify-center'>
                 <span className='font-medium text-white'>Follow us on </span>
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
                   <path fill="#62F43E" d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
