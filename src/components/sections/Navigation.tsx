@@ -123,7 +123,7 @@ const Navigation = () => {
                                         asChild
                                         size="lg"
                                         className="bg-primary hover:bg-primary/90">
-                                        <Link href="#waitlist" className='flex gap-2 items-center justify-center' onClick={() => setMenuState(false)}>
+                                        <Link href="https://x.com/use_zypp/status/1959235039503298640" className='flex gap-2 items-center justify-center' onClick={() => setMenuState(false)}>
                                             <span className='font-medium'>Join the waitlist</span>
                                             <ArrowUpRight className='size-5' />     
                                         </Link>
