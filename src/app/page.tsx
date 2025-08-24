@@ -6,22 +6,29 @@ import Navigation from "@/components/sections/Navigation";
 import { Button } from "@/components/ui/button";
 import { Squares } from "@/components/ui/squares-background";
 import { ThemeToggle } from "@/components/ui/theme-toggler";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="bg-black relative text-white min-h-screen flex flex-col overflow-x-hidden px-15 lg:px-0 items-center">
-      <Image
-        src={require("../assets/spotlight.svg")}
-        alt="Background"
-        
-        className="absolute inset-0 object-cover  z-10 overflow-hidden"
-        priority  
+        <div
+        className={cn(
+          "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none opacity-30",
+          "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]",
+        )}
       />
-      <Navigation/>
-      <Hero/>
-      <Features/>
-      <ForDevs/>
+      <Image
+        src={require("../assets/spotlight.svg")}  
+        alt="Background"
+
+        className="absolute inset-0 object-cover  z-10 overflow-hidden"
+        priority
+      />
+      <Navigation />
+      <Hero />
+      <Features />
+      <ForDevs />
     </div>
   );
 }

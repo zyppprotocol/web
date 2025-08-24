@@ -15,7 +15,7 @@ const serif = Sora({
 });
 
 const mono = Space_Grotesk({
-  variable: "--font-mono",  
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: "400",
 });
@@ -52,10 +52,6 @@ export const metadata: Metadata = {
     creator: "@use_zypp",
   },
   metadataBase: new URL("https://zypp.fun"),
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   authors: [{ name: "Zypp Protocol", url: "https://zypp.fun" }],
   keywords: [
     "Zypp",
@@ -171,9 +167,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
-      <ThemeProvider defaultTheme="system" enableSystem>
-        {children}
-      </ThemeProvider>
+        <ThemeProvider defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

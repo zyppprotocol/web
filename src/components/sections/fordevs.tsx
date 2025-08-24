@@ -5,26 +5,26 @@ const ForDevs = () => {
     const points = [
       {
         "id": 1,
-        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Offline-First</span><br />Design</h1>,
-        "text": <p className="text-xs sm:text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Stay reliable even when offline.<br className="hidden sm:block" /> Transactions sync seamlessly once you're<br className="hidden sm:block" /> back online.</p>,
+        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left">Offline Functionality</h1>,
+        "text": <p className="text-xs sm:text-sm md:text-md text-white/60 tracking-wide font-sans text-center lg:text-left">Enable your users to transfer assets, files, and data even without an active internet connection, drastically expanding the reach and utility of your dApp.</p>,
         "image": require("@/assets/p1.svg"),
       },
       {
         "id": 2,
-        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Gesture-Driven</span><br />Interaction</h1>,
-        "text": <p className="text-xs sm:text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Turn natural movements into instant<br className="hidden sm:block" /> confirmations.</p>,
+        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left">Intuitive User Experience</h1>,
+        "text": <p className="text-xs sm:text-sm md:text-md text-white/60 tracking-wide font-sans text-center lg:text-left">Leverage gesture-driven interactions (like swiping and tapping) to make digital transfers feel as natural as a handshake.</p>,
         "image": require("@/assets/p2.svg"),
       },
       {
         "id": 3,
-        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Fast and Secure</span><br />Transactions</h1>,
-        "text": <p className="text-xs sm:text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Move tokens in seconds, with security built<br className="hidden sm:block" /> in at every step.</p>,
+        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left">Solana-Native Efficiency</h1>,
+        "text": <p className="text-xs sm:text-sm md:text-md text-white/60 tracking-wide font-sans text-center lg:text-left">Benefit from Solana's high-speed, low-cost blockchain for on-chain settlement, ensuring efficient and scalable transactions.</p>,
         "image": require("@/assets/p3.svg"),
       },
       {
         "id": 4,
-        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Durable </span>Nonces</h1>,
-        "text": <p className="text-xs sm:text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Transactions wait patiently until you're back <br className="hidden sm:block" />online.</p>,
+        "heading": <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left">Enhanced Security</h1>,
+        "text": <p className="text-xs sm:text-sm md:text-md text-white/60 tracking-wide font-sans text-center lg:text-left">Integrate with a protocol built with end-to-end encryption, local signing, and replay protection, ensuring user assets and data remain secure.</p>,
         "image": require("@/assets/p4.svg"),
       },
     ]

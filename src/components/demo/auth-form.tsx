@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 // --- HELPER COMPONENTS (ICONS) ---
 
@@ -30,7 +31,7 @@ export interface Testimonial {
   text: string;
 }
 
-interface SignInPageProps {
+interface AuthFormProps {
   title?: React.ReactNode;
   description?: React.ReactNode;
   heroImageSrc?: string;
@@ -63,7 +64,7 @@ const TestimonialCard = ({ testimonial, delay }: { testimonial: Testimonial, del
 
 // --- MAIN COMPONENT ---
 
-export const SignInPage: React.FC<SignInPageProps> = ({
+export const AuthForm: React.FC<AuthFormProps> = ({
   title = <span className="font-light text-white tracking-tighter">Welcome back <span className='text-primary'>!</span></span>,
   description = "Login to access your Zypp Developer dashboard",
   heroImageSrc,
@@ -82,20 +83,20 @@ export const SignInPage: React.FC<SignInPageProps> = ({
       <section className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <div className="flex flex-col gap-6">
-            <div>
+            <div className='mb-5'>
               <h1 className="animate-element animate-delay-100 text-4xl md:text-5xl font-semibold leading-tight">{title}</h1>
               <p className="animate-element animate-delay-200 text-zinc-400">{description}</p>
             </div>
 
             <form className="space-y-5" onSubmit={onSignIn}>
-              <div className="animate-element animate-delay-300">
+              <div className="animate-element animate-delay-300 gap-3 flex flex-col">
                 <label className="text-sm font-medium text-zinc-400">Email Address</label>
                 <GlassInputWrapper>
                   <input name="email" type="email" placeholder="Enter your email address" className="w-full bg-transparent text-sm p-4 rounded-full focus:outline-none text-white placeholder-zinc-500" />
                 </GlassInputWrapper>
               </div>
 
-              <div className="animate-element animate-delay-400">
+              <div className="animate-element animate-delay-400 gap-3 flex flex-col">
                 <label className="text-sm font-medium text-zinc-400">Password</label>
                 <GlassInputWrapper>
                   <div className="relative">
@@ -147,7 +148,7 @@ export const SignInPage: React.FC<SignInPageProps> = ({
             </button>
 
             <p className="animate-element animate-delay-900 text-center text-sm text-zinc-400">
-              New to our platform?{" "}
+              New to Zypp?{" "}
               <a
                 href="#"
                 onClick={(e) => { e.preventDefault(); onCreateAccount?.(); }}
@@ -168,7 +169,7 @@ export const SignInPage: React.FC<SignInPageProps> = ({
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 px-8 w-full justify-center">
               <TestimonialCard testimonial={testimonials[0]} delay="animate-delay-1000" />
               {testimonials[1] && <div className="hidden xl:flex"><TestimonialCard testimonial={testimonials[1]} delay="animate-delay-1200" /></div>}
-              {testimonials[2] && <div className="hidden 2xl:flex"><TestimonialCard testimonial={testimonials[2]} delay="animate-delay-1400" /></div>}
+              {testimonials[2] && <div className="h   idden 2xl:flex"><TestimonialCard testimonial={testimonials[2]} delay="animate-delay-1400" /></div>}
             </div>
           )}
         </section>
@@ -198,13 +199,13 @@ const sampleTestimonials: Testimonial[] = [
   },
 ];
 
-const SignInPageDemo = () => {
+const AuthFormDemo = () => {
+  const router = useRouter()
   const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("Sign In submitted:", data);
-    alert(`Sign In Submitted! Check the browser console for form data.`);
+   router.push('/demo');
   };
 
   const handleGoogleSignIn = () => {
@@ -222,8 +223,8 @@ const SignInPageDemo = () => {
 
   return (
     <div className="dark bg-zinc-950 text-white">
-      <SignInPage
-        heroImageSrc="https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9?w=2160&q=80"
+      <AuthForm
+        heroImageSrc="https://images.unsplash.com/photo-1676902684125-c3c7bca3c70d?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         testimonials={sampleTestimonials}
         onSignIn={handleSignIn}
         onGoogleSignIn={handleGoogleSignIn}
@@ -234,4 +235,4 @@ const SignInPageDemo = () => {
   );
 };
 
-export default SignInPageDemo;
+export default AuthFormDemo;
