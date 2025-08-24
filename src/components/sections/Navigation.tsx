@@ -27,10 +27,10 @@ const Navigation = () => {
     }, [])
     
     return (
-        <header>
-            <nav className="fixed z-[50000] w-full px-2">
+        <header className="fixed left-0 right-0 z-[5000000] px-2">
+            <nav className="flex justify-center w-full max-w-[1920px] mx-auto">
                 <div className={cn(
-                    'mx-auto mt-6 max-w-6xl py-[0.50px] font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',
+                    'w-full max-w-6xl mt-6 py-[0.50px] font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',
                     isScrolled 
                         ? 'bg-[#D9FFCF]/8 backdrop-blur-md' 
                         : 'bg-transparent'

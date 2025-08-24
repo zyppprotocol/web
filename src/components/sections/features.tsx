@@ -38,7 +38,7 @@ export default function Features() {
     ]
 
     return (
-        <div className="w-full flex flex-col items-center justify-center my-10 md:my-20 font-sans z-[5000]">
+        <div className="w-full flex flex-col items-center justify-center my-10 md:my-20 font-sans z-[50000]">
             <div className="max-w-6xl w-full mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 gap-4 md:gap-6">
                     {features.map((feature, index) => (
@@ -57,7 +57,7 @@ export default function Features() {
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="w-full sm:w-auto bg-transparent hover:bg-neutral-950/60 border border-neutral-600 text-primary hover:text-primary/80 backdrop-blur-lg">
+                                    className="w-full sm:w-auto bg-transparent hover:bg-neutral-950/60 border border-neutral-600/30 text-primary hover:text-primary/80 backdrop-blur-lg">
                                     <Link href={feature.link} className='flex gap-2 items-center justify-center'>
                                         <span className='font-medium text-primary'>Learn more</span>
                                     </Link>
