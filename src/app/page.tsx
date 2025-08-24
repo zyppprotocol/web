@@ -14,8 +14,8 @@ export default function Home() {
       <Image
         src={require("../assets/spotlight.svg")}
         alt="Background"
-        fill
-        className="absolute inset-0 object-cover hidden lg:block z-10 overflow-hidden"
+        
+        className="absolute inset-0 object-cover  z-10 overflow-hidden"
         priority  
       />
       <Navigation/>

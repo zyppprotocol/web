@@ -58,7 +58,7 @@ const ForDevs = () => {
                             className='bg-neutral-950/40 rounded-xl flex flex-col text-left items-center lg:items-start 
                             py-6 sm:py-8 md:py-[3rem] px-4 sm:px-6 md:px-[3rem] gap-4 
                             transition-all duration-300 ease-out cursor-pointer border border-primary/5 backdrop-blur-lg
-                            hover:scale-[1.02] hover:bg-primary/10 hover:shadow-[0_0_30px_rgba(0,255,255,0.1)]
+                            hover:scale-[1.02] hover:bg-primary/10 hover:shadow-primary hover:shadow-lg
                             hover:border-primary/30 group'
                         >
                             <div className='flex flex-col items-center lg:items-start space-y-4'>

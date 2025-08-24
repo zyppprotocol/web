@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col gap-[2rem] md:gap-[5rem] items-center justify-center font-sans mt-[6rem] md:mt-[2rem] z-[5000] px-4">
+    <div className="min-h-screen w-full flex flex-col gap-[2rem] md:gap-[5rem] items-center justify-center font-sans mt-[6rem] lg:mt-[15rem] md:mt-[2rem] z-[5000] px-4">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start md:justify-between mx-auto gap-8 md:gap-0">
         <div className="text-center md:text-left">
           <Link href="https://x.com/use_zypp/status/1959235039503298640" target="_blank">
@@ -58,7 +58,7 @@ const Hero = () => {
       <Image
         src={require("@/assets/hero.svg")}
         alt="Hero"
-        className="w-[100rem] scale-200 my-[10rem]"
+        className="lg:scale-75 md:scale-85 w-[100rem] scale-200 my-[7rem]"
       />
     </div>
   )
