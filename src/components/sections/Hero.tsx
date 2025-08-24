@@ -22,10 +22,10 @@ const Hero = () => {
               <ChevronRight className="inline h-4 w-4 text-primary" />
             </Badge>
           </Link>
-          <h1 className='font-serif mt-3 text-2xl md:text-4xl font-extrabold'>Payment infrastructure that<br className="hidden md:block" /> moves at <span className='text-primary'>Zypp speed</span></h1>
+          <h1 className='font-serif mt-3 text-4xl md:text-4xl font-extrabold'>Payment infrastructure that<br className="hidden md:block" /> moves at <span className='text-primary'>Zypp speed</span></h1>
           <div className='block md:hidden mt-6 text-sm tracking-wide lg:text:md'>
             <p className='text-primary font-sans'>The first DropFi Protocol on Solana.</p>
-            <p>Bringing the future of onchain<br className="hidden md:block" />transactions to the offline ecosystem</p>
+            <p>Bringing the future of onchain <br className="hidden md:block" />transactions to the offline ecosystem</p>
           </div>
           <div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full mt-6 md:mt-10'>
             <Button
