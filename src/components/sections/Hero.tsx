@@ -58,7 +58,7 @@ const Hero = () => {
       <Image
         src={require("@/assets/hero.svg")}
         alt="Hero"
-        className="scale-75 md:scale-85 w-full max-w-[90vw] md:max-w-full"
+        className="w-[100rem] scale-200 my-[10rem]"
       />
     </div>
   )
