@@ -25,17 +25,17 @@ const Navigation = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-    
+
     return (
         <header className="fixed left-0 right-0 z-[5000000] px-2">
             <nav className="flex justify-center w-full max-w-[1920px] mx-auto">
                 <div className={cn(
                     'w-full max-w-6xl mt-6 font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',
-                    isScrolled 
-                        ? 'bg-[#D9FFCF]/8 backdrop-blur-md' 
+                    isScrolled
+                        ? 'bg-[#D9FFCF]/8 backdrop-blur-md'
                         : 'bg-transparent'
                 )}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-2 lg:gap-0 lg:py-4">
+                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 lg:gap-0 lg:py-3">
                         <div className="flex w-full justify-between lg:w-auto">
                             <Link
                                 href="/"
@@ -81,8 +81,8 @@ const Navigation = () => {
                             "fixed inset-0 top-20 bg-black/30 backdrop-blur-md", // Full screen backdrop
                             "lg:relative lg:top-0 lg:inset-auto lg:bg-transparent lg:backdrop-blur-0",
                             "transition-all duration-300 ease-in-out",
-                            menuState 
-                                ? "opacity-100 pointer-events-auto" 
+                            menuState
+                                ? "opacity-100 pointer-events-auto"
                                 : "opacity-0 pointer-events-none",
                             "lg:opacity-100 lg:pointer-events-auto"
                         )}>
@@ -95,8 +95,8 @@ const Navigation = () => {
                                 "lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
                                 "transition-all duration-300 ease-in-out",
                                 "transform",
-                                menuState 
-                                    ? "opacity-100 translate-y-0" 
+                                menuState
+                                    ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-[-10px]",
                                 "lg:opacity-100 lg:translate-y-0"
                             )}>
@@ -120,14 +120,14 @@ const Navigation = () => {
                                 </div>
                                 <div className={cn('flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit', menuState ? 'mt-6' : '')}>
                                     <Link href="https://x.com/use_zypp/status/1959235039503298640" className='flex gap-2 items-center justify-center' onClick={() => setMenuState(false)}>
-                                    <Button
-                                        
-                                        size="lg"
-                                        className="bg-primary hover:bg-primary/90">
+                                        <Button
+
+                                            size="lg"
+                                            className="bg-primary hover:bg-primary/90">
                                             <span className='font-medium'>Join the waitlist</span>
-                                            <ArrowUpRight className='size-5' />     
-                                    </Button>
-                                        </Link>
+                                            <ArrowUpRight className='size-5' />
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

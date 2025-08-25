@@ -8,6 +8,11 @@ const sans = Instrument_Sans({
   subsets: ["latin"],
 });
 
+const alt = Bricolage_Grotesque({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
 const serif = Sora({
   variable: "--font-serif",
   subsets: ["latin"],
@@ -166,7 +171,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+        className={`${sans.variable} ${serif.variable} ${mono.variable} ${alt.variable} bg-black text-white min-h-screen scroll-smooth`}>
         <ThemeProvider defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

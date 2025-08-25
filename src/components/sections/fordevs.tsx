@@ -33,7 +33,7 @@ const ForDevs = () => {
     ]
 
     return (
-        <div className='bg-[#090f07] rounded-t-4xl w-full flex relative z-[5000] px-4 sm:px-6 md:px-8 lg:px-10 tracking-wide overflow-hidden'>
+        <div className='bg-[#090f07] rounded-4xl w-full flex relative z-[5000] px-4 sm:px-6 md:px-8 lg:px-10 tracking-wide overflow-hidden'>
             <Image
                 alt="code"
                 src={require("@/assets/code.svg")}
