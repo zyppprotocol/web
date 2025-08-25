@@ -20,7 +20,7 @@ export default function Home() {
         )}
       />
       <Image
-        src={require("../assets/spotlight.svg")}  
+        src={require("@/assets/spotlight.svg")}  
         alt="Background"
 
         className="absolute inset-0 object-cover  z-10 overflow-hidden"

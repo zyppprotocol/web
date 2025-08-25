@@ -48,12 +48,15 @@ const Hero = () => {
                 </svg>
               </Link>
             </Button>
+
           </div>
+
         </div>
         <div className="hidden md:block text-center md:text-right">
           <p className='text-primary font-sans'>The first DropFi Protocol on Solana</p>
           <p>Bringing the future of onchain<br className="hidden md:block" />transactions to the offline ecosystem</p>
         </div>
+
       </div>
       <Image
         src={require("@/assets/hero.svg")}
