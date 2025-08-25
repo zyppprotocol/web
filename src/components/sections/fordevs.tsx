@@ -59,7 +59,7 @@ const ForDevs = () => {
                             <div
                                 key={index}
                                 className='bg-neutral-950/40 rounded-xl flex flex-col text-left items-center lg:items-start 
-                            py-5 sm:py-6 md:py-8 px-4 sm:px-5 md:px-6 gap-3 md:gap-4
+                            py-5 sm:py-6 md:py-10 px-9 sm:px-5 md:px-12 gap-3 md:gap-4
                             transition-all duration-300 ease-out cursor-pointer border border-primary/5 backdrop-blur-lg
                             hover:scale-[1.02] hover:bg-primary/10 hover:shadow-primary hover:shadow-lg
                             hover:border-primary/30 group'

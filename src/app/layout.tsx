@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 3423,
-        height: 2000,
+        width: 1200,
+        height: 630,
         alt: "Zypp Protocol",
       },
     ],
