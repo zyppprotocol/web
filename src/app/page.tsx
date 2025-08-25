@@ -22,7 +22,8 @@ export default function Home() {
       <Image
         src="../assets/spotlight.svg"
         alt="Background"
-
+        width={1920}
+        height={1080}
         className="absolute inset-0 object-cover  z-10 overflow-hidden"
         priority
       />
