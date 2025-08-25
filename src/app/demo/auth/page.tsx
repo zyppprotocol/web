@@ -84,7 +84,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({
                 <div className="w-full max-w-md">
                     <div className="flex flex-col gap-6">
                         <div className='mb-5'>
-                            <h1 className="animate-element animate-delay-100 text-4xl md:text-5xl font-semibold leading-tight">{title}</h1>
+                            <h1 className="animate-element animate-delay-100 text-4xl md:text-5xl font-semibold leading-tight font-serif">{title}</h1>
                             <p className="animate-element animate-delay-200 text-zinc-400">{description}</p>
                         </div>
 

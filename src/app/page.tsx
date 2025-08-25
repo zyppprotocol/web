@@ -3,6 +3,7 @@ import Features from "@/components/sections/features";
 import ForDevs from "@/components/sections/fordevs";
 import Hero from "@/components/sections/Hero";
 import Navigation from "@/components/sections/Navigation";
+import Waitlist from "@/components/sections/waitlist";
 import { Button } from "@/components/ui/button";
 import { Squares } from "@/components/ui/squares-background";
 import { ThemeToggle } from "@/components/ui/theme-toggler";
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Features />
       <ForDevs />
+      <Waitlist/>
     </div>
   );
 }

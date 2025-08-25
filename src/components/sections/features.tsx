@@ -9,29 +9,29 @@ export default function Features() {
     const features = [
         {
             "id": 1,
-            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Offline-First</span><br />Design</h1>,
-            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Stay reliable even when offline.<br /> Transactions sync seamlessly once you're<br /> back online.</p>,
+            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Offline-First </span>Design</h1>,
+            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Stay reliable even when offline. Transactions sync seamlessly once you're back online.</p>,
             "image": require("@/assets/f1.svg"),
             "link": "/docs/offline-first"
         },
         {
             "id": 2,
-            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-right"><span className="text-primary">Gesture-Driven</span><br />Interaction</h1>,
-            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-right">Turn natural movements into instant<br /> confirmations.</p>,
+            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-right"><span className="text-primary">Gesture-Driven </span>Interaction</h1>,
+            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-right">Turn natural movements into instant confirmations.</p>,
             "image": require("@/assets/f2.svg"),
             "link": "/docs/gestures"
         },
         {
             "id": 3,
-            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Fast and Secure</span><br />Transactions</h1>,
-            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Move tokens in seconds, with security built<br /> in at every step.</p>,
+            "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-left"><span className="text-primary">Fast and Secure </span>Transactions</h1>,
+            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-left">Move tokens in seconds, with security built in at every step.</p>,
             "image": require("@/assets/f3.svg"),
             "link": "/docs/speed-and-security"
         },
         {
             "id": 4,
             "heading": <h1 className="text-2xl md:text-3xl font-bold text-white font-serif text-center lg:text-right"><span className="text-primary">Durable </span>Nonces</h1>,
-            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-right">Transactions wait patiently until you're back <br />online.</p>,
+            "text": <p className="text-sm md:text-md tracking-wide font-sans text-center lg:text-right">Transactions wait patiently until you're back online.</p>,
             "image": require("@/assets/f4.svg"),
             "link": "/docs/durable-nonces"
         },
