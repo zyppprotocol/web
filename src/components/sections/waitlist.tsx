@@ -247,7 +247,7 @@ const Waitlist = () => {
                         name="email" 
                         type="email" 
                         autoComplete="email" 
-                        placeholder="info@zypp.fun" 
+                        placeholder="Type in your email address" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         disabled={isLoading || isSuccess}
