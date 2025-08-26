@@ -19,6 +19,7 @@ const menuItems = [
     { name: 'Home', href: '#hero' },
     { name: 'Features', href: '#features' },
     { name: 'For Developers', href: '#fordevs' },
+    { name: 'LinkTree' , href: 'https://linktr.ee/use_zypp' },
     // { name: 'Blog', href: '#blog' },
 ]
 
@@ -115,7 +116,8 @@ const Navigation = () => {
                                     <li key={index}>
                                         <a
                                             href={item.href}
-                                            onClick={(e) => handleLinkClick(e, item.href)}
+                                            target='_blank'
+                                            onClick={item.href.startsWith('#') ? (e) => handleLinkClick(e, item.href) : undefined}
                                             className="text-white/80 text-sm hover:text-primary transition block duration-150 cursor-pointer"
                                         >
                                             <span>{item.name}</span>
