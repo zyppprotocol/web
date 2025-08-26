@@ -20,7 +20,7 @@ export default function Home() {
         )}
       />
       <Image
-        src="../assets/spotlight.svg"
+        src={require("@/assets/spotlight.svg")}
         alt="Background"
         width={1920}
         height={1080}
