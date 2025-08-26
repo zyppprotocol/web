@@ -52,7 +52,7 @@ const GlassInputWrapper = ({ children }: { children: React.ReactNode }) => (
 );
 
 const TestimonialCard = ({ testimonial, delay }: { testimonial: Testimonial, delay: string }) => (
-    <div className={`animate-testimonial ${delay} flex items-start gap-3 rounded-3xl bg-zinc-800/40 backdrop-blur-xl border border-white/10 p-5 w-64`}>
+    <div className={`animate-testimonial ${delay} flex items-start gap-3 rounded-3xl bg-zinc-800/40 backdrop-blur-xl border border-white/10 py-5 px-10 min-w-64`}>
         <img src={testimonial.avatarSrc} className="h-10 w-10 object-cover rounded-2xl" alt="avatar" />
         <div className="text-sm leading-snug">
             <p className="flex items-center gap-1 font-medium text-white">{testimonial.name}</p>
@@ -78,13 +78,13 @@ export const AuthForm: React.FC<AuthFormProps> = ({
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="dark h-[100dvh] flex flex-col md:flex-row font-geist w-[100dvw] bg-zinc-950 text-white">
+        <div className="dark h-[100dvh] flex flex-col md:flex-row font-geist w-[100dvw] bg-zinc-950 text-white font-sans">
             {/* Left column: sign-in form */}
             <section className="flex-1 flex items-center justify-center p-8">
                 <div className="w-full max-w-md">
                     <div className="flex flex-col gap-6">
                         <div className='mb-5'>
-                            <h1 className="animate-element animate-delay-100 text-4xl md:text-5xl font-semibold leading-tight font-serif">{title}</h1>
+                            <h1 className="animate-element animate-delay-100 text-4xl md:text-5xl font-semibold leading-tight font-sans">{title}</h1>
                             <p className="animate-element animate-delay-200 text-zinc-400">{description}</p>
                         </div>
 

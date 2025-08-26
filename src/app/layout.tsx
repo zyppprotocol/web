@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Sans, Geist, Geist_Mono, Instrument_Sans, Instrument_Serif, Sora, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const sans = Instrument_Sans({
   variable: "--font-sans",
@@ -169,11 +170,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
       <body
-        className={`${sans.variable} ${serif.variable} ${mono.variable} ${alt.variable} bg-black text-white min-h-screen scroll-smooth`}>
+        className={`${sans.variable} ${serif.variable} ${mono.variable} ${alt.variable} bg-black text-white min-h-screen scroll-smooth overflow-x-hidden`}>
         <ThemeProvider defaultTheme="system" enableSystem>
-          {children}
+          {/* <SmoothScrollWrapper> */}
+            {children}
+          {/* </SmoothScrollWrapper> */}
         </ThemeProvider>
       </body>
     </html>

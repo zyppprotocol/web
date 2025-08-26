@@ -1,4 +1,3 @@
-import Devs from "@/components/sections/devs";
 import Features from "@/components/sections/features";
 import ForDevs from "@/components/sections/fordevs";
 import Hero from "@/components/sections/Hero";
@@ -12,18 +11,16 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-black relative text-white min-h-screen flex flex-col overflow-x-hidden px-15 lg:px-0 items-center">
-        <div
+    <div className="bg-black customscroll w-screen relative text-white min-h-screen flex flex-col !overflow-x-hidden px-15 lg:px-0 items-center">
+      <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none opacity-30",
           "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]",
         )}
       />
       <Image
-        src={require("@/assets/spotlight.svg")}
         alt="Background"
-        width={1920}
-        height={1080}
+        src={require("@/assets/spotlight.svg")}
         className="absolute inset-0 object-cover  z-10 overflow-hidden"
         priority
       />
@@ -31,7 +28,7 @@ export default function Home() {
       <Hero />
       <Features />
       <ForDevs />
-      <Waitlist/>
+      <Waitlist />
     </div>
   );
 }
