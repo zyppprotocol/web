@@ -211,7 +211,7 @@ const Waitlist = () => {
                 ref={waitMarkRef}
                 src={require("@/assets/wait-mark.svg")}
                 alt="Background"
-                className="w-15 z-[50000000] absolute top-[10rem] opacity-0"
+                className="w-15 z-[50000000] hidden lg:block absolute top-[10rem] opacity-0"
             />
 
       <Particles
