@@ -82,7 +82,7 @@ export default function Features() {
             <div className="grid grid-cols-1 gap-4 md:gap-1">
                 {features.map((feature, index) => (
                     <div key={index} ref={el => featureItemsRef.current[index] = el as HTMLDivElement} className={cn(
-                        "flex flex-col-reverse gap-4 mb-8 lg:mb-10 opacity-0",
+                        "flex flex-col-reverse gap-2 mb-8 lg:mb-10 opacity-0",
                         "lg:flex-row lg:items-center lg:justify-between",
                         feature.id % 2 === 0 && "lg:flex-row-reverse"
                     )}>
@@ -102,12 +102,12 @@ export default function Features() {
                                 </Link>
                             </Button>
                         </div>
-                        <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 group">
+                        <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-2 group">
                             <Image
                                 src={feature.image}
                                 alt="Feature Image"
                                 className={cn(
-                                    "w-full md:w-4/5 scale-75 lg:w-full transition-all duration-500 group-hover:scale-85",
+                                    "w-full md:w-4/5 scale-50 lg:w-full transition-all duration-500 group-hover:scale-85",
                                     feature.id > 1 && "lg:w-3/4"
                                 )}
                             />

@@ -285,7 +285,7 @@ const Waitlist = () => {
                                 <>
                                     <CheckCircle className="size-4" />
                                     Success! You've joined the waitlist.
-                                </>
+                                </> 
                             )}
                         </div>
                     </div>

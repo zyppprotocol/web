@@ -143,7 +143,7 @@ const ForDevs = () => {
                 className="absolute right-0 top-0 pointer-events-none select-none w-1/2 sm:w-2/5 md:w-2/6 opacity-50 sm:opacity-100"
             />
             {/* Add horizontal padding to the inner container instead */}
-            <div className="max-w-6xl mx-auto flex flex-col items-start justify-start pb-8 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pl-10 pr-11  sm:px-10 md:px-8 lg:px-10 w-full">
+            <div className="max-w-6xl mx-auto flex flex-col items-start justify-start pb-8 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pl-10 pr-11 mt-[1.7rem] sm:px-10 md:px-8 lg:px-10 w-full">
                 <div ref={titleRef} className="text-left gap-4 sm:gap-5 md:gap-7 flex flex-col w-full opacity-0">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-center lg:text-left">
                         <span className="text-primary">For Developers:</span><br className="" />
@@ -154,7 +154,7 @@ const ForDevs = () => {
                         <br className="hidden md:block" /> offline, peer-to-peer transfers of on-chain and off-chain assets.
                     </p>
                 </div>
-                <div className="flex flex-col items-center lg:items-start justify-center mt-[4rem] w-full">
+                <div className="flex flex-col items-center lg:items-start justify-center mt-[2.3rem] w-full">
                     <h1 ref={whyIntegrateRef} className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center lg:text-left w-full opacity-0">
                         Why Integrate<span className="text-primary"> Zypp:</span>
                     </h1>
