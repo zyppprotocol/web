@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+#custom
+sitemap.ts
+
 # debug
 npm-debug.log*
 yarn-debug.log*
