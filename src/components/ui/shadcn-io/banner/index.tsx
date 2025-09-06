@@ -52,7 +52,7 @@ export const Banner = ({
     <BannerContext.Provider value={{ show, setShow }}>
       <div
         className={cn(
-          'flex w-full items-center justify-between gap-2 bg-primary px-4 py-2 text-primary-foreground',
+          'flex w-full px-60 items-center justify-between gap-2 bg-primary py-2 text-primary-foreground text-sm',
           inset && 'rounded-lg',
           className
         )}
@@ -87,7 +87,7 @@ export const BannerIcon = ({
 export type BannerTitleProps = HTMLAttributes<HTMLParagraphElement>;
 
 export const BannerTitle = ({ className, ...props }: BannerTitleProps) => (
-  <p className={cn('flex-1 text-sm', className)} {...props} />
+  <p className={cn('flex-1 text-xs', className)} {...props} />
 );
 
 export type BannerActionProps = ComponentProps<typeof Button>;

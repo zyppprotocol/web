@@ -75,7 +75,7 @@ const Navigation = () => {
     }
     
     return (
-        <header className="fixed left-0 right-0 z-[5000000] px-2">
+        <header className={cn("fixed left-0 right-0 z-[5000000] px-2 transition duration-300", isScrolled ? "mt-0" : "mt-10")}>
             <nav className="flex justify-center w-full max-w-[1920px] mx-auto">
                 <div className={cn(
                     'w-full max-w-6xl mt-6 font-sans pl-3 pr-9 transition-all duration-300 lg:px-4 rounded-full',

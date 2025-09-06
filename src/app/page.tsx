@@ -1,3 +1,4 @@
+import Funds from "@/components/sections/banner";
 import Features from "@/components/sections/features";
 import ForDevs from "@/components/sections/fordevs";
 import Hero from "@/components/sections/Hero";
@@ -26,13 +27,7 @@ export default function Home() {
         className="absolute inset-0 object-cover  z-10 overflow-hidden"
         priority
       />
-      <Banner>
-  <BannerIcon icon={CircleAlert} />
-  <BannerTitle>Zypp Protocol Fundraiser Live!</BannerTitle>
-  <p>Support the next-gen decentralized delivery system. Smart contract: <strong>0x1234...ABCD</strong></p>
-  <BannerAction>Contribute Now</BannerAction>
-  <BannerClose />
-</Banner>
+      <Funds />
 
       <Navigation />
       <Hero />
