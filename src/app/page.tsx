@@ -4,9 +4,11 @@ import Hero from "@/components/sections/Hero";
 import Navigation from "@/components/sections/Navigation";
 import Waitlist from "@/components/sections/waitlist";
 import { Button } from "@/components/ui/button";
+import { Banner, BannerIcon, BannerTitle, BannerAction, BannerClose } from "@/components/ui/shadcn-io/banner";
 import { Squares } from "@/components/ui/squares-background";
 import { ThemeToggle } from "@/components/ui/theme-toggler";
 import { cn } from "@/lib/utils";
+import { CircleAlert } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -24,6 +26,14 @@ export default function Home() {
         className="absolute inset-0 object-cover  z-10 overflow-hidden"
         priority
       />
+      <Banner>
+  <BannerIcon icon={CircleAlert} />
+  <BannerTitle>Zypp Protocol Fundraiser Live!</BannerTitle>
+  <p>Support the next-gen decentralized delivery system. Smart contract: <strong>0x1234...ABCD</strong></p>
+  <BannerAction>Contribute Now</BannerAction>
+  <BannerClose />
+</Banner>
+
       <Navigation />
       <Hero />
       <Features />
