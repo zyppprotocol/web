@@ -143,5 +143,3 @@ Join the waitlist or contribute to the open source SDK to help build the future 
 
 Zypp Protocol is licensed under the **Apache 2.0 License**.  
 You are free to use, modify, and distribute under open source terms.
-# web
-# web
