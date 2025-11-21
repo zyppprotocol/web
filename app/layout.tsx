@@ -8,7 +8,7 @@ import {
 import "./globals.css";
 import fractal from "@/assets/fractal.svg";
 import coinHero from "@/assets/coin-hero.svg";
-import { absoluteUrl, buildMetadata, siteMetadata } from "@/lib/seo";
+import { buildMetadata, siteMetadata } from "@/lib/seo";
 
 const sans = Instrument_Sans({
   variable: "--font-sans",
@@ -33,7 +33,8 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: siteMetadata.name,
   url: siteMetadata.url,
-  logo: absoluteUrl("/og.png"),
+  logo: siteMetadata.logo,
+  image: siteMetadata.logo,
   sameAs: [
     "https://x.com/use_zypp",
     "https://github.com/zyppprotocol",
@@ -53,9 +54,13 @@ export const metadata: Metadata = {
   ...buildMetadata(),
   metadataBase: new URL(siteMetadata.url),
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: ["/apple-touch-icon.png"],
   },
   authors: [{ name: siteMetadata.name, url: siteMetadata.url }],
   publisher: siteMetadata.name,

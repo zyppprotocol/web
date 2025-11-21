@@ -10,8 +10,9 @@ export const siteMetadata = {
     "Zypp Protocol is the offline transaction layer for Solana, designed to enable seamless peer to peer value exchange without requiring active internet connectivity. It establishes a reliable foundation for real world payments, supporting environments with low connectivity, crowded networks, and on-the-go usage. Zypp Protocol powers the Zypp Wallet, a mobile experience built for instant offline transactions, and will soon be available to developers through The Offline Stack, a dedicated SDK for integrating offline capabilities into apps, wallets, tools, and financial products. The protocol focuses on accessibility, mobility, and global usability, making blockchain payments practical for everyday users, merchants, and communities. With open development, continuous updates, and an ecosystem first approach, Zypp Protocol aims to become a core standard for offline interactions across the Solana ecosystem.",
   url: rawSiteUrl,
   twitter: "@use_zypp",
-  ogImage: "/og.png",
-  contactEmail: "info@zypp.fun",
+  ogImage: `${rawSiteUrl}/og.png`,
+  logo: `${rawSiteUrl}/apple-touch-icon.png`,
+  contactEmail: "hello@zypp.fun",
   keywords: [
     "Zypp Protocol",
     "offline crypto payments",
