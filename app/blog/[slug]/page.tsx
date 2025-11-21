@@ -19,6 +19,9 @@ import { SafeImage } from "@/components/custom/safe-image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 interface BlogPost {
   id: string;
   title: string;
@@ -196,35 +199,6 @@ export async function generateMetadata({
     keywords: post.tags?.map((tag) => tag.name) || [],
     canonical: post.canonical_url || undefined,
   });
-}
-
-export async function generateStaticParams() {
-  try {
-    console.log("Generating static params for blog posts...");
-
-    const { data: posts, error } = await supabase
-      .from("blog_posts")
-      .select("slug")
-      .eq("is_published", true);
-
-    if (error) {
-      console.error("Error generating static params:", error);
-      // Return empty array to allow dynamic rendering
-      return [];
-    }
-
-    console.log("Found posts for static generation:", posts?.length || 0);
-
-    return (
-      posts?.map((post: { slug: string }) => ({
-        slug: post.slug,
-      })) || []
-    );
-  } catch (error) {
-    console.error("Error generating static params:", error);
-    // Return empty array to allow dynamic rendering
-    return [];
-  }
 }
 
 export default async function BlogDetailPage({
