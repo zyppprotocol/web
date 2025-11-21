@@ -1,29 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { MainBtn } from "@/components/custom/MainBtn";
-import { OrbitingCircles } from "@/components/custom/orbiting-cirlces";
 import { Spotlight } from "@/components/custom/spotlight";
 import { NavBar } from "@/components/sections/NavBar";
 import { Footer } from "@/components/sections/Footer";
 import { OutBtn } from "@/components/custom/OutBtn";
-import oneImg from "@/assets/one.png";
-import speedImg from "@/assets/speed.png";
-import securityImg from "@/assets/security.png";
-import userImg from "@/assets/user-x.png";
 import {
-  Code2,
   GitBranch,
   BookOpen,
-  Terminal,
   Zap,
   Shield,
   Globe,
   Cpu,
   Coins,
-  WifiOff,
   Share,
   ArrowUpRight,
   Download,
@@ -32,46 +23,18 @@ import {
   FileCode,
   Server,
   Smartphone,
-  Lock,
-  Rocket,
   CheckCircle2,
   Copy,
   ExternalLink,
   Ticket,
-  Clock,
+  Truck,
+  Gamepad,
 } from "lucide-react";
 
 export default function DevelopersClient() {
   const [activeTab, setActiveTab] = useState("sdk");
   const [activeDisTab, setActiveDisTab] = useState("javascript");
   const [copiedCode, setCopiedCode] = useState("");
-
-  const features = [
-    {
-      title: "Offline Functionality",
-      description:
-        "Enable your users to transfer assets, files, and data even without an active internet connection, drastically expanding the reach and utility of your dApp.",
-      image: oneImg,
-    },
-    {
-      title: "Solana-Native Efficiency",
-      description:
-        "Benefit from Solana's high-speed, low-cost blockchain for on-chain settlement, ensuring efficient and scalable transactions.",
-      image: speedImg,
-    },
-    {
-      title: "Enhanced Security",
-      description:
-        "Integrate with a protocol built with end-to-end encryption, local signing, and replay protection, ensuring user assets and data remain secure.",
-      image: securityImg,
-    },
-    {
-      title: "Intuitive User Experience",
-      description:
-        "Leverage gesture-driven interactions (like swiping and tapping) to make digital transfers feel as natural as a handshake.",
-      image: userImg,
-    },
-  ];
 
   const sdks = [
     {
