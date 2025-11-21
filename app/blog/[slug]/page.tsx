@@ -17,6 +17,7 @@ import {
 import { CopyLinkButton } from "@/components/custom/copy-link-button";
 import { SafeImage } from "@/components/custom/safe-image";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/seo";
 
 interface BlogPost {
   id: string;
@@ -28,6 +29,7 @@ interface BlogPost {
   read_time_minutes: number;
   meta_title?: string;
   meta_description?: string;
+  canonical_url?: string | null;
   author: {
     name: string;
     avatar_url: string;
@@ -108,6 +110,7 @@ async function getBlogPost(
         read_time_minutes: post.read_time_minutes,
         meta_title: post.meta_title,
         meta_description: post.meta_description,
+        canonical_url: post.canonical_url,
         author: post.blog_authors
           ? {
               name: post.blog_authors.name,
@@ -175,30 +178,24 @@ export async function generateMetadata({
   const post = await getBlogPost(slug);
 
   if (!post) {
-    return {
-      title: "Post Not Found | Zypp Blog",
+    return buildMetadata({
+      title: "Post Not Found",
       description: "The blog post you are looking for does not exist.",
-    };
+      path: `/blog/${slug}`,
+    });
   }
 
-  return {
+  return buildMetadata({
     title: post.meta_title || post.title,
     description: post.meta_description || post.excerpt,
-    openGraph: {
-      title: post.meta_title || post.title,
-      description: post.meta_description || post.excerpt,
-      images: [post.featured_image],
-      type: "article",
-      publishedTime: post.published_at,
-      authors: [post.author.name],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.meta_title || post.title,
-      description: post.meta_description || post.excerpt,
-      images: [post.featured_image],
-    },
-  };
+    path: `/blog/${slug}`,
+    image: post.featured_image,
+    type: "article",
+    publishedTime: post.published_at,
+    updatedTime: post.published_at,
+    keywords: post.tags?.map((tag) => tag.name) || [],
+    canonical: post.canonical_url || undefined,
+  });
 }
 
 export async function generateStaticParams() {
@@ -300,7 +297,7 @@ export default async function BlogDetailPage({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 py-6 border-t border-b border-white/10">
             <div className="flex items-center gap-4">
               {/* Author Avatar */}
-              <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-emerald-500/20 rounded-full overflow-hidden">
+              <div className="w-12 h-12 bg-linear-to-br from-primary/20 to-emerald-500/20 rounded-full overflow-hidden">
                 <SafeImage
                   src={post.author.avatar_url}
                   alt={post.author.name}
@@ -412,8 +409,8 @@ export default async function BlogDetailPage({
           {/* Author Bio */}
           <div className="mt-12 p-8 bg-black/5 rounded-3xl border border-white/10">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-emerald-500/20 rounded-full overflow-hidden">
+              <div className="shrink-0">
+                <div className="w-16 h-16 bg-linear-to-br from-primary/20 to-emerald-500/20 rounded-full overflow-hidden">
                   <SafeImage
                     src={post.author.avatar_url}
                     alt={post.author.name}

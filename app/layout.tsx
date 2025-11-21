@@ -1,14 +1,14 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import {
   Instrument_Sans,
   Instrument_Serif,
   Space_Grotesk,
-  Space_Mono,
 } from "next/font/google";
 import "./globals.css";
 import fractal from "@/assets/fractal.svg";
 import coinHero from "@/assets/coin-hero.svg";
+import { absoluteUrl, buildMetadata, siteMetadata } from "@/lib/seo";
 
 const sans = Instrument_Sans({
   variable: "--font-sans",
@@ -28,139 +28,53 @@ const mono = Space_Grotesk({
   weight: ["400", "700"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteMetadata.name,
+  url: siteMetadata.url,
+  logo: absoluteUrl("/og.png"),
+  sameAs: [
+    "https://x.com/use_zypp",
+    "https://github.com/zyppprotocol",
+    "https://www.linkedin.com/company/zypp-protocol/",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      email: siteMetadata.contactEmail,
+      contactType: "customer support",
+      availableLanguage: ["English"],
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "Zypp Protocol - The Offline-First Payment Layer for Solana.",
-  description:
-    "Zypp Protocol is the first offline protocol on Solana, powering P2P transactions offline.",
+  ...buildMetadata(),
+  metadataBase: new URL(siteMetadata.url),
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  openGraph: {
-    title: "Zypp Protocol - The Offline-First Payment Layer for Solana",
-    description:
-      "Zypp Protocol is the first offline protocol on Solana, powering P2P transactions offline.",
-    url: "https://zypp.fun",
-    siteName: "Zypp Protocol",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Zypp Protocol",
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Zypp Protocol - The Offline-First Payment Layer for Solana",
-    description:
-      "Zypp Protocol is the first offline protocol on Solana, powering P2P transactions offline.",
-    images: "/og.png",
-    creator: "@use_zypp",
-  },
-  metadataBase: new URL("https://zypp.fun"),
-  authors: [{ name: "Zypp Protocol", url: "https://zypp.fun" }],
-  keywords: [
-    "Zypp",
-    "Zypp Protocol",
-    "DropFi",
-    "Solana",
-    "Cryptocurrency",
-    "Blockchain",
-    "P2P Transactions",
-    "Offline Transactions",
-    "Crypto Wallet",
-    "Decentralized Finance",
-    "DeFi",
-    "Digital Assets",
-    "Crypto Payments",
-    "Crypto Transfers",
-    "Crypto Exchange",
-    "Crypto Trading",
-    "Crypto Security",
-    "Crypto Innovation",
-    "Crypto Technology",
-    "Crypto Solutions",
-    "Crypto Development",
-    "Crypto Integration",
-    "Crypto SDK",
-    "Crypto API",
-    "Crypto Infrastructure",
-    "Crypto Ecosystem",
-    "Crypto Community",
-    "Crypto Future",
-    "Crypto Revolution",
-    "Crypto Adoption",
-    "Crypto Growth",
-    "Crypto Trends",
-    "Crypto News",
-    "Crypto Insights",
-    "Crypto Analysis",
-    "Crypto Research",
-    "Crypto Education",
-    "Crypto Resources",
-    "Crypto Tools",
-    "Crypto Services",
-    "Crypto Support",
-    "Crypto Partnerships",
-    "Crypto Collaborations",
-    "Crypto Opportunities",
-    "Crypto Challenges",
-    "Crypto Solutions",
-    "Crypto Vision",
-    "Crypto Mission",
-    "Crypto Values",
-    "Crypto Goals",
-    "Crypto Objectives",
-    "Crypto Strategies",
-    "Crypto Plans",
-    "Crypto Roadmap",
-    "Crypto Milestones",
-    "Crypto Achievements",
-    "Crypto Success",
-    "Crypto Impact",
-    "Crypto Legacy",
-    "Crypto Future",
-    "Crypto Innovation",
-    "Crypto Technology",
-    "Crypto Development",
-    "developer",
-    "SDK",
-    "API",
-    "integration",
-    "dApp",
-    "decentralized application",
-    "instant transfers",
-    "offline transfers",
-    "peer-to-peer",
-    "on-chain assets",
-    "off-chain assets",
-    "blockchain",
-    "smart contracts",
-    "cryptography",
-    "digital identity",
-    "secure transactions",
-    "user experience",
-    "mobile payments",
-    "financial inclusion",
-    "global payments",
-    "remittances",
-    "microtransactions",
-  ],
+  authors: [{ name: siteMetadata.name, url: siteMetadata.url }],
+  publisher: siteMetadata.name,
+  creator: siteMetadata.name,
+  category: "Blockchain",
+  applicationName: siteMetadata.name,
+  referrer: "strict-origin-when-cross-origin",
   robots: {
     index: true,
     follow: true,
     nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
-  category: "Blockchain",
-  publisher: "Zypp Protocol",
-  creator: "Zypp Protocol",
-  applicationName: "Zypp Protocol",
-  referrer: "no-referrer-when-downgrade",
   formatDetection: {
     email: false,
     address: false,
@@ -192,11 +106,19 @@ export default function RootLayout({
           as="image"
           type="image/svg+xml"
         />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
       </head>
       <body
         className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

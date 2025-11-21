@@ -1,6 +1,5 @@
 // app/about/page.tsx
-"use client";
-
+import type { Metadata } from "next";
 import { MainBtn } from "@/components/custom/MainBtn";
 import { Spotlight } from "@/components/custom/spotlight";
 import { ArrowUpRight } from "lucide-react";
@@ -11,6 +10,15 @@ import speedImg from "@/assets/speed.png";
 import securityImg from "@/assets/security.png";
 import userImg from "@/assets/user-x.png";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About",
+  description:
+    "Discover the Zypp Protocol mission, offline-first architecture, and milestones shaping the future of Solana payments.",
+  path: "/about",
+  keywords: ["About Zypp", "offline crypto mission", "Solana founders"],
+});
 
 export default function AboutPage() {
   const features = [
