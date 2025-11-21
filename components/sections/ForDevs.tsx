@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import oneImg from "@/assets/one  .png";
+import oneImg from "@/assets/one.png";
 import speedImg from "@/assets/speed.png";
 import securityImg from "@/assets/security.png";
 import userImg from "@/assets/user-x.png";
