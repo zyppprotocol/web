@@ -2,8 +2,9 @@
 
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { MainBtn } from "./custom/MainBtn";
-import { ArrowUpRight } from "lucide-react";
+import { AlertCircle, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Input } from "./ui/input";
+import { Spotlight } from "./custom/spotlight";
 
 const TARGET_TIMESTAMP = new Date("2025-11-28T08:00:00+01:00").getTime();
 const COUNTDOWN_SEGMENTS = ["Days", "Hours", "Minutes", "Seconds"] as const;
@@ -112,9 +113,10 @@ export const CountdownGate = ({ children }: { children: ReactNode }) => {
 
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#010504] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,226,91,0.15),rgba(1,5,4,0.95))]" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,226,91,0.15),rgba(1,5,4,0.95))]" />
       <div className="absolute -top-20 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-primary/25 blur-[120px]" />
-      <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80" /> */}
+      <Spotlight/>
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 text-center">
         <p className="text-xs uppercase tracking-[0.5rem] text-white/60">
@@ -140,7 +142,7 @@ export const CountdownGate = ({ children }: { children: ReactNode }) => {
               onChange={(e) => setEmail(e.target.value)}
               required
               disabled={loading}
-              className="bg-transparent border-0! outline-none! focus:ring-0 h-full w-full px-1 xs:px-2 sm:px-6 focus:border-0 focus:outline-0 active:ring-0 text-white placeholder:text-white/70 text-xs xs:text-sm sm:text-lg"
+              className="placeholder:font-medium bg-transparent border-0! outline-none! focus:ring-0 h-full w-full px-1 xs:px-2 sm:px-6 focus:border-0 focus:outline-0 active:ring-0 text-white placeholder:text-white/70 text-xs xs:text-sm sm:text-lg"
             />
             <MainBtn
               type="submit"
@@ -150,6 +152,23 @@ export const CountdownGate = ({ children }: { children: ReactNode }) => {
               {loading ? "Joining..." : "Join the waitlist"}
             </MainBtn>
           </div>
+          {/* Status Message */}
+          {status !== "idle" && (
+            <div
+              className={`flex items-center font-medium tracking-tighter mt-2 gap-2 mb-4 px-4 py-3 rounded-2xl text-sm ${
+                status === "success"
+                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                  : "bg-red-500/20 text-red-400 border border-red-500/30"
+              }`}
+            >
+              {status === "success" ? (
+                <CheckCircle2 className="w-4 h-4" />
+              ) : (
+                <AlertCircle className="w-4 h-4" />
+              )}
+              {message}
+            </div>
+          )}
         </form>
         <div className="mt-10 grid w-full grid-cols-2 gap-4 sm:grid-cols-4">
           {countdownBlocks}
