@@ -1,10 +1,9 @@
 import fractal from "@/assets/fractal.svg";
 import coinHero from "@/assets/coin-hero.png";
 import Image from "next/image";
-import { Button } from "../ui/button";
-import { Twitter, X } from "lucide-react";
 import { MainBtn } from "../custom/MainBtn";
 import { OutBtn } from "../custom/OutBtn";
+import { scrollToWaitlist } from "@/lib/utils/scroll";
 
 export const Hero = () => {
   return (
@@ -52,33 +51,43 @@ export const Hero = () => {
             Unlock the fastest way to move your digital assets.
           </p>
           <div className="mt-6 sm:mt-8 flex w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto flex-col sm:flex-row sm:justify-center gap-3 sm:gap-4">
-            <MainBtn className="w-full sm:w-auto">
+            <MainBtn className="w-full sm:w-auto" onClick={scrollToWaitlist}>
               <p className="relative z-10 font-semibold text-black text-sm sm:text-base">
                 Get early access
               </p>
             </MainBtn>
-            <OutBtn className="w-full sm:w-auto">
-              <p className="relative z-10 font-semibold text-white text-sm sm:text-base">
-                Check us out on
-              </p>
-              <svg
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                id="X--Streamline-Simple-Icons"
-                height="18"
-                width="18"
-                className="sm:h-5 sm:w-5"
-              >
-                <desc>X Streamline Icon: https://streamlinehq.com</desc>
-                <title>X</title>
-                <path
-                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8 -7.584 -6.638 7.584H0.474l8.6 -9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-                  fill="#fff"
-                  strokeWidth="1"
-                ></path>
-              </svg>
-            </OutBtn>
+            <a
+              href="https://x.com/use_zypp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <OutBtn className="w-full">
+                <p className="relative z-10 font-semibold text-white text-sm sm:text-base">
+                  Follow us on
+                </p>
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="X--Streamline-Simple-Icons"
+                  height="18"
+                  width="18"
+                  className="sm:h-5 sm:w-5"
+                  aria-label="X (formerly Twitter)"
+                >
+                  <desc>
+                    X (formerly Twitter) - Follow us on X for the latest updates
+                  </desc>
+                  <title>X (formerly Twitter)</title>
+                  <path
+                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8 -7.584 -6.638 7.584H0.474l8.6 -9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                    fill="currentColor"
+                    strokeWidth="1"
+                  ></path>
+                </svg>
+              </OutBtn>
+            </a>
           </div>
         </div>
       </div>

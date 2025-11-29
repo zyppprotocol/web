@@ -9,6 +9,7 @@ import { Badge } from "../ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Menu } from "lucide-react";
+import { scrollToWaitlist } from "@/lib/utils/scroll";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -94,7 +95,10 @@ export const NavBar = () => {
 
       {isMobile ? (
         <div className="flex items-center gap-2">
-          <MainBtn className="relative z-10 scale-90">
+          <MainBtn
+            className="relative z-10 scale-90"
+            onClick={scrollToWaitlist}
+          >
             <p className="font-semibold text-black text-sm">Get access</p>
           </MainBtn>
           <Sheet>
@@ -116,7 +120,10 @@ export const NavBar = () => {
           <nav className="hidden md:flex items-center justify-center gap-8 relative z-10">
             <NavLinks />
           </nav>
-          <MainBtn className="relative z-10 hidden md:block">
+          <MainBtn
+            className="relative z-10 hidden md:block"
+            onClick={scrollToWaitlist}
+          >
             <p className="font-semibold text-black">Get early access</p>
           </MainBtn>
         </>

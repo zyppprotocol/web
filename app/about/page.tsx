@@ -5,6 +5,8 @@ import { Spotlight } from "@/components/custom/spotlight";
 import { ArrowUpRight } from "lucide-react";
 import { NavBar } from "@/components/sections/NavBar";
 import { Footer } from "@/components/sections/Footer";
+import { Waitlist } from "@/components/sections/Waitlist";
+import { scrollToWaitlist } from "@/lib/utils/scroll";
 import oneImg from "@/assets/one.png";
 import speedImg from "@/assets/speed.png";
 import securityImg from "@/assets/security.png";
@@ -234,7 +236,7 @@ export default function AboutPage() {
             Join us in building the future of offline digital asset transfers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <MainBtn>
+            <MainBtn onClick={scrollToWaitlist}>
               <p className="font-semibold text-black">Get Early Access</p>
               <ArrowUpRight className="text-primary-foreground" size={16} />
             </MainBtn>
@@ -242,6 +244,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Waitlist />
       <Footer />
     </div>
   );

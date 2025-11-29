@@ -5,6 +5,7 @@ import { MainBtn } from "@/components/custom/MainBtn";
 import { Spotlight } from "@/components/custom/spotlight";
 import { NavBar } from "@/components/sections/NavBar";
 import { Footer } from "@/components/sections/Footer";
+import { Waitlist } from "@/components/sections/Waitlist";
 import {
   Calendar,
   Clock,
@@ -504,6 +505,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <Waitlist />
       <Footer />
     </div>
   );

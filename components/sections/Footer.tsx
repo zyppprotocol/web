@@ -20,10 +20,10 @@ export const Footer = () => {
     setStatus("idle");
 
     try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email }),
       });
@@ -36,11 +36,11 @@ export const Footer = () => {
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || 'Something went wrong');
+        setMessage(data.error || "Something went wrong");
       }
     } catch (error) {
       setStatus("error");
-      setMessage('Failed to subscribe. Please try again.');
+      setMessage("Failed to subscribe. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -52,41 +52,67 @@ export const Footer = () => {
         <div className="gap-8 sm:gap-12 lg:gap-15 flex flex-col justify-between lg:flex-row">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
             <p className="relative text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight flex items-center justify-start gap-2 flex-wrap">
-              Send Crypto <span className="text-primary font-serif font-semibold italic">Offline</span>
-              <ArrowUpRight size={24} className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10" />
+              Send Crypto{" "}
+              <span className="text-primary font-serif font-semibold italic">
+                Offline
+              </span>
+              <ArrowUpRight
+                size={24}
+                className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10"
+              />
             </p>
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
               <p>Get Support : </p>
-              <a href="mailto:info@zypp.fun" className="text-sm sm:text-base">info@zypp.fun</a>
+              <a href="mailto:info@zypp.fun" className="text-sm sm:text-base">
+                info@zypp.fun
+              </a>
             </div>
           </div>
           <div className="grid w-full max-w-xs grid-cols-2 gap-8 sm:gap-10 text-sm font-light lg:text-base">
             <ul className="space-y-1">
               <li>
-                <Link href="/" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg">
+                <Link
+                  href="/"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg">
+                <Link
+                  href="/about"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg">
+                <Link
+                  href="/blog"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/developers" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg">
+                <Link
+                  href="/developers"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg"
+                >
                   For Developers
                 </Link>
               </li>
             </ul>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="text-sm sm:text-md w-full tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1">
-                  Twitter
+                <a
+                  href="https://x.com/use_zypp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-md w-full tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1"
+                  aria-label="Follow us on X (formerly Twitter)"
+                >
+                  <span>Follow us on X</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -106,7 +132,10 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1">
+                <a
+                  href="#"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1"
+                >
                   Telegram
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +156,10 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1">
+                <a
+                  href="#"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1"
+                >
                   GitHub
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +186,10 @@ export const Footer = () => {
           <div className="flex w-full max-w-md flex-col gap-6 sm:gap-8 lg:gap-10">
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
               <p>Sign up for newsletter : </p>
-              <form onSubmit={handleNewsletterSubmit} className="border-b-foreground/10 flex w-full items-end border-b">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="border-b-foreground/10 flex w-full items-end border-b"
+              >
                 <input
                   type="email"
                   value={email}
@@ -188,24 +223,37 @@ export const Footer = () => {
                 </button>
               </form>
               {status !== "idle" && (
-                <p className={`text-sm mt-2 ${
-                  status === "success" ? "text-green-400" : "text-red-400"
-                }`}>
+                <p
+                  className={`text-sm mt-2 ${
+                    status === "success" ? "text-green-400" : "text-red-400"
+                  }`}
+                >
                   {message}
                 </p>
               )}
             </div>
           </div>
           <div className="grid w-full max-w-xs grid-cols-2 gap-8 sm:gap-10 text-sm font-light lg:text-base">
-            <div className="w-28 xs:w-32">Built with love, On <span className="bg-linear-to-r from-purple-500 via-blue-500 to-green-500 bg-clip-text text-transparent">Solana</span></div>
+            <div className="w-28 xs:w-32">
+              Built with love, On{" "}
+              <span className="bg-linear-to-r from-purple-500 via-blue-500 to-green-500 bg-clip-text text-transparent">
+                Solana
+              </span>
+            </div>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1">
+                <a
+                  href="#"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1">
+                <a
+                  href="#"
+                  className="text-sm sm:text-md tracking-tighter text-white hover:text-primary/70 transition-colors duration-300 text-shadow-lg group flex items-center gap-1"
+                >
                   Terms & Conditions
                 </a>
               </li>

@@ -6,18 +6,18 @@ import { cn } from "@/lib/utils";
 
 interface MainBtnProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
   className?: string;
 }
 
-export const MainBtn = ({ 
-  children, 
-  onClick, 
-  disabled = false, 
+export const MainBtn = ({
+  children,
+  onClick,
+  disabled = false,
   type = "button",
-  className 
+  className,
 }: MainBtnProps) => {
   return (
     <Button
@@ -60,7 +60,8 @@ export const MainBtn = ({
         aria-hidden
         className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
-          background: "linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%)",
+          background:
+            "linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%)",
           backgroundSize: "200% 100%",
           animation: "shine 2s infinite linear",
           pointerEvents: "none",

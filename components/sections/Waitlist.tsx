@@ -31,10 +31,10 @@ export const Waitlist = () => {
     setStatus("idle");
 
     try {
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email }),
       });
@@ -47,18 +47,21 @@ export const Waitlist = () => {
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || 'Something went wrong');
+        setMessage(data.error || "Something went wrong");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
-      setMessage('Failed to join waitlist. Please try again.');
+      setMessage("Failed to join waitlist. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col mt-20 sm:mt-40 items-center justify-center min-h-screen w-screen font-sans relative overflow-hidden px-4">
+    <div
+      id="waitlist"
+      className="flex flex-col mt-20 sm:mt-40 items-center justify-center min-h-screen w-screen font-sans relative overflow-hidden px-4"
+    >
       <Spotlight />
       <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 sm:mb-6 tracking-tight z-20 text-center">
         Be the First to{" "}
@@ -74,11 +77,13 @@ export const Waitlist = () => {
 
       {/* Status Message */}
       {status !== "idle" && (
-        <div className={`flex items-center gap-2 mb-4 px-4 py-3 rounded-2xl text-sm ${
-          status === "success" 
-            ? "bg-green-500/20 text-green-400 border border-green-500/30" 
-            : "bg-red-500/20 text-red-400 border border-red-500/30"
-        }`}>
+        <div
+          className={`flex items-center gap-2 mb-4 px-4 py-3 rounded-2xl text-sm ${
+            status === "success"
+              ? "bg-green-500/20 text-green-400 border border-green-500/30"
+              : "bg-red-500/20 text-red-400 border border-red-500/30"
+          }`}
+        >
           {status === "success" ? (
             <CheckCircle2 className="w-4 h-4" />
           ) : (
@@ -88,7 +93,10 @@ export const Waitlist = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="w-full max-w-xs xs:max-w-sm sm:max-w-md">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-xs xs:max-w-sm sm:max-w-md"
+      >
         <div className="bg-neutral-400/20 h-12 xs:h-14 rounded-full w-full px-2 xs:px-4 flex items-center justify-between">
           <Input
             type="email"
@@ -99,7 +107,7 @@ export const Waitlist = () => {
             disabled={loading}
             className="bg-transparent border-0! outline-none! focus:ring-0 h-full w-full px-1 xs:px-2 sm:px-6 focus:border-0 focus:outline-0 active:ring-0 text-white placeholder:text-white/70 text-xs xs:text-sm sm:text-lg"
           />
-          <MainBtn 
+          <MainBtn
             type="submit"
             disabled={loading}
             className="text-primary-foreground tracking-tighter font-semibold text-sm py-1 px-5 disabled:opacity-50 disabled:cursor-not-allowed"

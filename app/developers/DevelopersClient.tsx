@@ -6,7 +6,9 @@ import { MainBtn } from "@/components/custom/MainBtn";
 import { Spotlight } from "@/components/custom/spotlight";
 import { NavBar } from "@/components/sections/NavBar";
 import { Footer } from "@/components/sections/Footer";
+import { Waitlist } from "@/components/sections/Waitlist";
 import { OutBtn } from "@/components/custom/OutBtn";
+import { scrollToWaitlist } from "@/lib/utils/scroll";
 import {
   GitBranch,
   BookOpen,
@@ -237,7 +239,7 @@ await discovery.start();`,
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <MainBtn>
+              <MainBtn onClick={scrollToWaitlist}>
                 <span className="font-semibold text-black">
                   Get Early Access
                 </span>
@@ -497,6 +499,7 @@ await discovery.start();`,
         </div>
       </section>
 
+      <Waitlist />
       <Footer />
     </div>
   );
