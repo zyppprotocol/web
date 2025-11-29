@@ -356,9 +356,9 @@ export default async function BlogDetailPage({
       {/* Article Content */}
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <article className="blog-content">
+          <article className="blog-content tracking-tighter">
             <div
-              className="blog-content-inner"
+              className="blog-content-inner tracking-tighter"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
